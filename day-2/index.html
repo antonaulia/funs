@@ -1,0 +1,58 @@
+<!-- <script>
+angka = prompt('masukan angka anda')
+angka=parseFloat(angka)
+if(angka%2==0){
+    alert('angka anda genap')
+}else{
+    alert('angka anda ganjil')
+}
+</script> -->
+
+<!-- <script>
+angka1 = prompt('masukan angka pertama')
+angka2 = prompt('masukan angka kedua')
+angka1 = parseFloat(angka1)
+angka2 = parseFloat(angka2)
+
+total =angka1+angka2
+alert('total kedua angka anda adalah  '+total)
+</script> -->
+
+<!-- <script>
+nilai = prompt('masukan nilai anda :  ')
+nilai = parseFloat(nilai)
+
+if(nilai<=100 && nilai>=90){
+    alert('Grade anda A')
+}else if(nilai<=89 && nilai>=80){
+    alert('Grade anda B')
+}else if(nilai<=79 && nilai>=70){
+    alert('Grade anda C')
+}else if(nilai<=69 && nilai>=60){
+    alert('Grade anda D')
+}else if(nilai<=59 && nilai>=0){
+    alert('Grade anda F')
+}else{
+    alert('Nilai yang anda masukan tidak termasuk dalam pada range grading')
+}
+</script> -->
+
+<script>
+bb = parseFloat(prompt('masukan berat badan anda (kg): '))
+tb = parseFloat(prompt('masukan tinggi badan anda (cm) : ')) 
+
+imt = Math.pow(tb/100,2)
+imt = bb/imt
+
+if(imt>39.9){
+    alert('imt anda :  ' + imt+ 'berat badan anda obesitas')
+}else if(imt>30.0){
+    alert('imt anda :  ' + imt+'berat badan anda bb sangat berlebih')
+}else if(imt>25.0){
+    alert('imt anda :  ' + imt+'berat badan anda bb berlebih')
+}else if(imt>18.5){
+    alert('imt anda :  ' + imt+'berat badan anda bb ideal')
+}else {
+    alert('imt anda :  ' + imt+'berat badan anda kurang')
+}
+</script>

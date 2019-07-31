@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1 class="hasil">Mari menghitung !</h1>
+        <input type="number" name="" id="x" placeholder="input angka !"> <input type="number" name="" id="y" placeholder="input angka !">
+        <br><br>
+        <input type="button" value="Tambah" onclick="tambah()"> <input type="button" value="Kurang" onclick="kurang()"> <input type="button" value="Kali" onclick="kali()"> <input type="button" value="Bagi" onclick="bagi()">
+    </center>
+
+    <script>
+    function tambah(){
+        x=parseInt(document.getElementById('x').value)
+        y=parseInt(document.getElementById('y').value)
+        return document.getElementsByTagName('h1')[0].innerHTML= x+y
+    }
+
+    function kurang(){
+        x=parseInt(document.getElementById('x').value)
+        y=parseInt(document.getElementById('y').value)
+        return document.getElementsByTagName('h1')[0].innerHTML= x-y
+    }
+    
+    function kali(){
+        x=parseInt(document.getElementById('x').value)
+        y=parseInt(document.getElementById('y').value)
+        return document.getElementsByTagName('h1')[0].innerHTML= x*y
+    }
+
+    function bagi(){
+        x=parseInt(document.getElementById('x').value)
+        y=parseInt(document.getElementById('y').value)
+        return document.getElementsByTagName('h1')[0].innerHTML= x/y
+    }
+    </script>
+</body>
+</html>

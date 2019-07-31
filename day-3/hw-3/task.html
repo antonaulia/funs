@@ -1,0 +1,121 @@
+<script>
+    do {
+        do {
+            s = parseInt(prompt(
+                'Input jenis layanan yg anda pilih (1-4) : \n1.Segitiga siku2\n2.Segitiga sama kaki\n3.Belanja\n4.exit'
+                ))
+            if (s < 1 || s > 4) {
+                alert('Input tidak Valid ! (input hanya angka 1-4)')
+                ival = true
+            } else {
+                ival = false
+            }
+        } while (ival)
+
+
+        if (s == 1) {
+            do {
+                inval = false
+                q = parseInt(prompt('1.segitiga siku tegak \ n 2.segitiga terbalik'))
+                if (q == 1) {
+                    do {
+                        r = parseInt(prompt('berapa jumlah baris yg di inginkan (1-10) ?'))
+                        if (r >= 1 && r <= 10) {
+                            avail = false
+                        } else {
+                            avail = true
+                            alert('input anda salah ! (1-10)')
+                        }
+                    } while (avail)
+                    var hasil = ''
+                    for (i = 0; i < r; i++) {
+                        hasil += '* '
+                        for (j = 0; j < i; j++) {
+                            hasil += '* '
+                        }
+                        hasil += '\n'
+                    }
+                    alert('hasil permintaan anda : \n' + hasil)
+                } else if (q == 2) {
+                    do {
+                        r = parseInt(prompt('berapa jumlah baris yg di inginkan (1-10) ?'))
+                        if (r >= 1 && r <= 10) {
+                            avail = false
+                        } else {
+                            avail = true
+                            alert('input anda salah ! (1-10)')
+                        }
+                    } while (avail)
+                    var hasil = ''
+                    for (i = 0; i < r; i++) {
+                        hasil += '* '
+                        for (j = r - 1; j > i; j--) {
+                            hasil += '* '
+                        }
+                        hasil += '\n'
+                    }
+                    alert('hasil permintaan anda : \n' + hasil)
+                } else {
+                    inval = true
+                    alert('input salah (1/2)')
+                }
+            } while (inval)
+        } else if (s == 2) {
+            do {
+                r = parseInt(prompt('masukan jumlah baris yang di inginkan ? '))
+                if (r > 1 && r < 11) {
+                    avail = false
+                } else {
+                    avail = true
+                    alert('error ! input anda salah')
+                }
+            } while (avail)
+            var hasil = ''
+            for (i = 0; i < r; i++) {
+                hasil += '  '
+                for (j = r - 1; j > i; j--) {
+                    hasil += '  '
+                }
+                for (k = 0; k < j + 1; k++) {
+                    hasil += '- '
+                }
+                for (l = 0; l < k - 1; l++) {
+                    hasil += '- '
+                }
+                for (m = r; m > k - 1; m--) {
+                    hasil += '  '
+                }
+                hasil += '\n'
+            }
+            alert('hasil permintaan anda : \n' + hasil)
+        } else if (s == 3) {
+            ayam = 10000
+            sapi = 25000
+            salmon = 30000
+            do {
+                ival = false
+                y = parseInt(prompt('Pilih jenis belanjaan anda : \n1.ayam = 10000\n2.sapi= 25000\n3.salmon = 30000'))
+                x = parseInt(prompt('berapa potong belanjaan anda ? maksimal 100 potong'))
+                if (y == 1 && x >= 1 && x <= 100) {
+                    harga = x * ayam
+                } else if (y == 2 && x >= 1 && x <= 100) {
+                    harga = x * sapi
+                } else if (y == 3 && x >= 1 && x <= 100) {
+                    harga = x * salmon
+                } else {
+                    ival = true
+                    alert('barang belanjaan anda belum tersdia (1-3)')
+                }
+            } while (ival)
+            alert('Total Belanjaan anda Rp. ' + harga)
+        } else if (s == 4) {
+            break
+        } else {
+            prompt('input yg dimasukan tidak valid / tersedia (1-4)')
+            ival = false
+        }
+        ival = confirm('ingin melakukan sekali lagi ?')
+    } while (ival)
+
+    alert('thanks for using !')
+</script>

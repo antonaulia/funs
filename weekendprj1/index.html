@@ -1,0 +1,62 @@
+<script>
+    function luaspersegi() {
+        luas = ''
+        var sisi = ''
+        var sisi = parseInt(prompt('input panjang sisi Persegi anda : '))
+        return alert('luas persegi anda ' + sisi * sisi + ' cm\u00B2')
+    }
+
+    function luastrapesium() {
+        luas = ''
+        var sisisejajajar1, sisisejajajar2, tinggi
+        var sisisejajajar1 = parseInt(prompt('input panjang sisi sejajar pertama trapesium anda : '))
+        var sisisejajajar2 = parseInt(prompt('input panjang sisi sejajar kedua traesium anda : '))
+        var tinggi = parseInt(prompt('input panjang tinggi trapsium anda : '))
+        return alert('luas trapesium anda ' + 0.5 * (sisisejajajar1 + sisisejajajar2) * tinggi + ' cm\u00B2')
+    }
+
+    function luassegitiga() {
+        luas = ''
+        var alas, tinggi
+        var alas = parseInt(prompt('input panjang alas segitiga anda : '))
+        var tinggi = parseInt(prompt('input panjang tinggi segitiga anda : '))
+        return alert('luas trapesium anda ' + 0.5 * alas * tinggi + ' cm\u00B2')
+    }
+
+    function luaspersegipanjang() {
+        luas = ''
+        var sisi1, sisi2
+        var sisi1 = parseInt(prompt('input panjang sisi pertama persegi panjang anda : '))
+        var sisi2 = parseInt(prompt('input panjang sisi kedua persegi panjang anda : '))
+        return alert('luas persegi panjang anda ' + sisi1 * sisi2 + ' cm\u00B2')
+    }
+
+    function detikjam() {
+        var j
+        var s = parseInt(prompt('input berapa detik yang ingin dikonversikan :  '))
+        return alert(s + ' detik = ' + s / 3600 + ' jam')
+    }
+
+
+    pil = null
+    inval = null
+    pil = parseInt(prompt(
+        'apa yang ingin anda lakukan ?\n1.Hitung luas Persegi\n2.Hitung luas persegi panjang\n3.hitung luas trapesium\n4.hitung luas segitiga\n5.konversi detik ke jam'
+    ))
+    if (pil >= 1 && pil <= 5) {
+        inval = false
+    } 
+
+    if (pil == 1) {
+        luaspersegi()
+    } else if (pil == 2) {
+        luaspersegipanjang()
+    } else if (pil == 3) {
+        luastrapesium()
+    } else if (pil == 4) {
+        luassegitiga()
+    } else if (pil == 5) {
+        detikjam()
+    }
+
+</script>

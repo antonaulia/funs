@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TUGAS</title>
+    <title>Purwadhika</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid rgb(76, 0, 255);
+            border-collapse: collapse;
+        }
+
+        mark {
+            background-color: yellow;
+        }
+
+        .bold {
+            font-weight: bold
+        }
+
+        img {
+            height: 80px;
+            width: auto;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 align="center">Purwadhika League 2019</h1>
+    <table align="center">
+        <tr>
+            <th><mark>Rank</mark> </th>
+            <th><mark>Club</mark> </th>
+            <th><mark>Logo</mark></th>
+            <th><mark>Function</mark></th>
+            <th><mark>Level</mark></th>
+            <th><mark>OK</mark></th>
+        </tr>
+        <tr>
+            <td>1<sup>st</sup> </td>
+            <td class="bold">Barcelona <sub>FC</sub></td>
+            <td><img id="barca"
+                    src="https://img2.pngdownload.id/20171217/b72/fc-barcelona-png-logo-5a36cbd60a5522.3526976715135405660423.jpg"
+                    alt=""></td>
+            <td>2x<sup>3</sup> + 3x<sup>2</sup> - x - 13 = 0</td>
+            <td><input type="radio" name="kelas">Junior<input type="radio" name="kelas">Professional</td>
+            <td><button onclick="barca()">show logo</button></td>
+        </tr>
+        <tr>
+            <td>2<sup>nd</sup> </td>
+            <td class="bold">Bayern <sub>Munich</sub></td>
+            <td><img id="bayer"
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Logo_FC_Bayern_M%C3%BCnchen_%282002%E2%80%932017%29.svg/220px-Logo_FC_Bayern_M%C3%BCnchen_%282002%E2%80%932017%29.svg.png"
+                    alt=""></td>
+            <td>3y<sup>3</sup> - 5y<sup>2</sup> - 2y + 3 = 0</td>
+            <td><input type="radio" name="kelas2">Junior<input type="radio" name="kelas2">Professional</td>
+            <td><button onclick="bayer()">show logo</button></td>
+        </tr>
+        <tr>
+            <td>3<sup>rd</sup> </td>
+            <td class="bold">Real <sub>Madrid</sub></td>
+            <td><img id="real"
+                    src="https://upload.wikimedia.org/wikipedia/id/thumb/8/8b/Real_Madrid_Club_de_F%C3%BAtbol.png/175px-Real_Madrid_Club_de_F%C3%BAtbol.png"
+                    alt=""></td>
+            <td>2z<sup>3</sup> + z<sup>2</sup> - 2z + 5 = 0</td>
+            <td><input type="radio" name="kelas3">Junior<input type="radio" name="kelas3">Professional</td>
+            <td><button onclick="real()">show logo</button></td>
+        </tr>
+    </table>
+    <div>
+        <h2 align="center">Anton &COPY; 2019</h2>               
+        <footer align="center">antoniusferiantoaulia@gmail.com</footer>
+    </div>
+
+    <script>
+        function barca() {
+            document.getElementById('hasil').src =
+                `https://img2.pngdownload.id/20171217/b72/fc-barcelona-png-logo-5a36cbd60a5522.3526976715135405660423.jpg`
+        }
+
+        function bayer() {
+            document.getElementById('hasil').src =
+                `https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Logo_FC_Bayern_M%C3%BCnchen_%282002%E2%80%932017%29.svg/220px-Logo_FC_Bayern_M%C3%BCnchen_%282002%E2%80%932017%29.svg.png`
+        }
+
+        function real() {
+            document.getElementById('hasil').src =
+                `https://upload.wikimedia.org/wikipedia/id/thumb/8/8b/Real_Madrid_Club_de_F%C3%BAtbol.png/175px-Real_Madrid_Club_de_F%C3%BAtbol.png`
+        }
+    </script>
+</body>
+
+</html>

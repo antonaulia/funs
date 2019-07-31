@@ -1,0 +1,9 @@
+function multiple(x, y) {
+    a = []
+    for (i = 0; i < x; i++) {
+        a.push(i + 1)
+        console.log(a[i] * y)
+    }
+}
+
+multiple(9, 8)

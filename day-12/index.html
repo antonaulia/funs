@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        table,
+        tr,
+        td {
+            border-collapse: collapse;
+            border: solid black 1px
+        }
+
+        thead {
+            text-align: center
+        }
+    </style>
+    <center>
+        <table>
+            <thead>
+                <tr>
+                    <td>Name</td>
+                    <td>Age</td>
+                    <td>Job</td>
+                </tr>
+            </thead>
+
+            <tbody>
+
+            </tbody>
+
+            <tfoot>
+                <tr>
+                    <td><input type="text" id="nama" placeholder="Input Nama"></td>
+                    <td><input type="number" id="umur" placeholder="Input Umur"></td>
+                    <td><input type="text" id="kerjaan" placeholder="Input Pekerjaan"></td>
+                </tr>
+            </tfoot>
+
+
+        </table>
+        <input type="button" ondblclick="adddata()" value='add'>
+    </center>
+
+    
+    <script>
+        var data = []
+
+        class person {
+            constructor(nama, umur, pekerjaan) {
+                this.nama = nama
+                this.umur = umur
+                this.pekerjaan = pekerjaan
+            }
+        }
+
+        function show(arr) {
+            var hasil = ''
+            arr.map((isi) => {
+                return hasil += `<tr>
+                    <td>${isi.nama}</td>
+                    <td>${isi.umur}</td>
+                    <td>${isi.pekerjaan}</td>
+                    </tr>`
+            })
+            document.getElementsByTagName('tbody')[0].innerHTML = hasil
+        }
+
+        function adddata() {
+            var inputnama = document.getElementById('nama').value
+            var inputumur = document.getElementById('umur').value
+            var inputpekerjaan = document.getElementById('kerjaan').value
+
+            data.push(new orang(inputnama, inputumur, inputpekerjaan))
+            show(data)
+        }
+    </script>
+
+</body>
+
+</html>

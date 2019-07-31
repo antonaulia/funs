@@ -1,0 +1,30 @@
+<script>
+do{
+h1=parseInt(prompt('masukan jam tiba anda : '))
+mm1=parseInt(prompt('1. AM \n or 2. PM'))
+h2=parseInt(prompt('masukan jam berangkat anda : '))
+mm2=parseInt(prompt('1. AM \n or 2. PM'))
+
+if (mm1=='2') {
+    h1=h1+12
+}else if (mm1=='1'){
+    h1=h1
+}
+
+if (mm2=='2') {
+    h2=h2+12
+}else if (mm2=='1'){
+    h2=h2
+}
+lama =h2-h1
+if (lama<=2){
+    harga = 2000*lama
+} else if (lama>2){
+    harga = 4000 + (500*(lama-2))
+}
+alert('biaya parkir anda :  '+harga)
+}while(confirm('ingin diulang ? '))
+
+alert('thankyou program is closed !')
+
+</script>

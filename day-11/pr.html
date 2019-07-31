@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tugas</title>
+</head>
+
+<body>
+    <table border="black">
+        <tr>
+            <td>
+                <h2>Drawing Tools <br>
+                </h2>
+                <p>
+                    Pilihan Bentuk :<br>
+                    1. Persegi<br>
+                    2. Segitiga Siku Kiri<br>
+                    3. Segitiga Siku Kanan<br>
+                    4. Segitiga Sama Kaki<br>
+                    5. Clear Display<br>
+                    <p>
+                        <input type="number" name="" id="x" placeholder="input pilihan geometri">
+                        <br>
+                        <br>
+                        <input type="number" name="" id="y" placeholder="input jumlah baris">
+                        <br>
+                        <br>
+                        <input type="button" value="SUBMIT" onclick="exe()">
+
+                        <div></div>
+            </td>
+        </tr>
+    </table>
+
+    <script>
+        function exe() {
+            pilg = document.getElementById('x').value
+            jmlb = document.getElementById('y').value
+            gambar = ''
+            if (pilg == 1) {
+                for (j = 0; j < jmlb; j++) {
+                    for (i = 0; i < jmlb; i++) {
+                        gambar += '* '
+                    }
+                    gambar += '<br>'
+                }
+                document.getElementsByTagName('div')[0].innerHTML = gambar
+            } else if (pilg == 2) {
+                for (j = 0; j < jmlb; j++) {
+                    for (i = 0; i <= j; i++) {
+                        gambar += '* '
+                    }
+                    gambar += '<br>'
+                }
+                document.getElementsByTagName('div')[0].innerHTML = gambar
+            } else if (pilg == 3) {
+                for (j = 0; j < jmlb; j++) {
+                    for (i = 0; i <= j; i++) {
+                        gambar += '* '
+                    }
+                    gambar += '<br>'
+                }
+                document.getElementsByTagName('div')[0].innerHTML = `<p style="text-align: right">${gambar}</p>`
+            } else if (pilg == 4) {
+                for (j = 0; j < jmlb; j++) {
+                    for (k = 0; k < j + 1; k++) {
+                        gambar += '* '
+                    }
+                    for (l = 0; l < k - 1; l++) {
+                        gambar += '* '
+                    }
+                    gambar += '<br>'
+                }
+                document.getElementsByTagName('div')[0].innerHTML = `<p style="text-align: center">${gambar}</p>`
+            } else {
+                gambar = ''
+                document.getElementsByTagName('div')[0].innerHTML = gambar
+            }
+        }
+    </script>
+
+</body>
+
+</html>

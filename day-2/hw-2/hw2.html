@@ -1,0 +1,25 @@
+<script>
+do{
+var angka1 = parseInt (prompt('masukan angka pertama :'))
+var angka2 = parseInt (prompt('masukan angka kedua :'))
+
+var method=prompt('Input operator  ( + - x / ) :')
+var hasil=null
+
+if(method=='+'){
+    hasil=angka1+angka2
+}else if(method=='-'){
+    hasil=angka1-angka2
+}else if(method=='*'){
+    hasil=angka1*angka2
+}else if(method=='/'){
+    hasil=angka1/angka2
+}else
+    alert('error, operator tidak tersedia')
+
+alert('hasil perhitungan adalah : '+hasil)
+}
+while(confirm('hitung lagi ?'))
+alert('thanks for using !')
+
+</script>
