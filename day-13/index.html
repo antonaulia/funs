@@ -71,6 +71,7 @@
                     this.pekerjaan = pekerjaan
             }
         }
+
         var data = [
             new Person('Andi', '23', 'Coder'),
             new Person('Seto', '43', 'Developer'),
@@ -101,7 +102,7 @@
             data.push(newman)
             showData(data)
         }
-        showData(data)
+
 
         function filterdata() {
             var filtername = document.getElementById('filter-name').value
@@ -116,15 +117,15 @@
             }
             return showData(tempdata)
         }
-        var x = 0
+        var x = true
 
         function sortbynameaz() {
-            var tempdata = data
+            tempdata=data
             if (x) {
                 for (let i = tempdata.length - 1; i > 0; i--) {
                     for (let j = 0; j < i; j++) {
                         if (tempdata[j].nama > tempdata[j + 1].nama) {
-                            const temp = tempdata[j]
+                            var temp = tempdata[j]
                             tempdata[j] = tempdata[j + 1]
                             tempdata[j + 1] = temp
                         }
@@ -138,6 +139,7 @@
                 showData(tempdata)
             }
         }
+        showData(data)
     </script>
 </body>
 
