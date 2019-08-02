@@ -19,7 +19,8 @@
             </div>
             <div class="col-6">
                 <label>Jenis kelamin</label><br>
-                Pria <input type="radio" name="kelamin" value="pria"> Wanita <input type="radio" name="kelamin" value="wanita">
+                Pria <input type="radio" name="kelamin" value="pria"> Wanita <input type="radio" name="kelamin"
+                    value="wanita">
             </div>
         </div>
         <div class="row">
@@ -52,10 +53,10 @@
                 onchange="filterdata()" class="form-control col-3 m-2"></select>
 
 
-                <div class="container text-center">
-                    Pria <input name="filter-sex" type="radio" onclick="filterdata()"> Wanita <input name="filter-sex"
-                        type="radio" onclick="filterdata()">
-                </div>
+            <div class="container text-center">
+                Pria <input name="filter-sex" type="radio" onclick="filterdata()"> Wanita <input name="filter-sex"
+                    type="radio" onclick="filterdata()">
+            </div>
         </div>
     </div>
 
@@ -113,7 +114,13 @@
             var inputumur = document.getElementById('umur').value
             var inputpekerjaan = document.getElementById('pekerjaan').value
             var inputkelamin = document.getElementsByName('kelamin')
-            if(inputkelamin[0].checked==true){inputkelamin='Pria'}else if(inputkelamin[1].checked==true){inputkelamin='Wanita'}else{inputkelamin='gajelas'}
+            if (inputkelamin[0].checked == true) {
+                inputkelamin = 'Pria'
+            } else if (inputkelamin[1].checked == true) {
+                inputkelamin = 'Wanita'
+            } else {
+                inputkelamin = 'gajelas'
+            }
 
             var newman = new Person(inputnama, inputumur, inputpekerjaan, inputkelamin)
             data.push(newman)
@@ -122,7 +129,8 @@
 
         function mapjob() {
             var hasil = ''
-            for(i=0;i<data.length;i++){
+            for (i = 0; i < data.length; i++) {
+                if(hasil.includes(data[i].pekerjaan)==false)
                 hasil += `<option id="optionz" value="${data[i].pekerjaan}" >${data[i].pekerjaan}</option>`
             }
             document.getElementById('filter-job').innerHTML = hasil
@@ -133,16 +141,23 @@
             var filterage = document.getElementById('filter-age').value
             var filterjob = document.getElementById('filter-job').value
             var filtersex = document.getElementsByName('filter-sex')
-            if (filtersex[0].checked==true){filtersex='Pria'}else if(filtersex[1].checked==true){filtersex='Wanita'}else{filtersex='gajelas'}
+            var tf
+            if (filtersex[0].checked == true) {
+                filtersex = 'Pria'
+            } else if (filtersex[1].checked == true) {
+                filtersex = 'Wanita'
+            } else {
+                tf = true
+            }
             console.log(filtersex)
             var tempdata = []
             for (i = 0; i < data.length; i++) {
                 if (data[i].nama.startsWith(filtername) && data[i].umur.startsWith(filterage) && data[i].pekerjaan
-                    .startsWith(filterjob)&& data[i].kelamin.startsWith(filtersex)) {
+                    .startsWith(filterjob) && (data[i].kelamin.startsWith(filtersex) || tf)) {
                     tempdata.push(data[i])
                 }
             }
-            return showData(tempdata)
+            showData(tempdata)
         }
         var x = true
 
