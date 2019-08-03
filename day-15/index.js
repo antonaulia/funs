@@ -45,4 +45,4 @@ function dnaswap(str){
     }
 return arr.join('')
 }
-console.log(dnaswap('tatatatagcgcgcgcgcg'))
+console.log(dnaswap('tagcatcg'))
