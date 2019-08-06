@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <style>
+    th,tr,td{
+        border: 1px black solid
+    }
+    img{
+        width: 75px
+    }
+    </style>
+
+    <center>
+        <h3>Products</h3>
+
+        <table class="table text-center">
+            <thead>
+                <tr>
+                    <th>Nama</th>
+                    <th>Harga</th>
+                    <th>Gambar</th>
+                    <th>Add</th>
+                </tr>
+            </thead>
+            <tbody id="pokemon">
+
+            </tbody>
+
+            <tfoot>
+                
+            </tfoot>
+
+        </table>
+    
+    </center>
+
+    <script>
+        class products{
+            constructor(nama,harga,gambar){
+                this.nama = nama
+                this.harga = harga
+                this.gambar =  gambar
+            }
+        }
+    
+
+        var list = [
+            new products('Kacang',20000,'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxITEhMUExAWFhMXGBcVFxcWGBcYGBUXFxUWFxUYGBUbHSggGBolGxUVITEhJSkrLi4uFx8zODMtNygtLisBCgoKDg0OGxAQGy0lICUvLS0tNTguLS0tLS0tLSstNS0tLS4rLS0tLi0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIAMEBBQMBIgACEQEDEQH/xAAcAAEAAgMBAQEAAAAAAAAAAAAABAUDBgcCAQj/xAA9EAACAQIDBQUGBAQFBQAAAAAAAQIDEQQhMQUGEkFRImFxgZETMkKhsdEHUsHhFGJyghUjM5LwJENTk/H/xAAZAQEAAwEBAAAAAAAAAAAAAAAAAgMEAQX/xAAuEQACAgEEAAQEBQUAAAAAAAAAAQIDEQQSITETIkFRFEJxgWGRsfDxBSMyUqH/2gAMAwEAAhEDEQA/AO4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFfi9qwg+FXlLu0XmRnOMFmTJRi5PCLA8VK0Y6yS8WUFTaE5N9pr+VESrWSac5WXJGOWtXyo0R0r+Zmxy2jT638E/qRp7cpJpZ3fLoa5LF8bcc4rk07PzPbahLPPm3ln5lT1djLFpo+ps8NqUm7cdn0eRLTNHq4+F3KLu9LLO3mSNjbfUaihe8Ja3+F9UW1att4kV2afCzE3EAG4ygAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA+NgH0x1q0Yq8nYi4vacY+6uJ92nqa/VxspSvK7b5ckZLtVGHEeWaKtPKfL4RN2ntVyvGPZjzfNkFwuladiPXlCOcpJN55lX/ilSTtCPZXVanmTslOWWehGuMVhF3Phpp8LTkiLS4arTfvLvPMIq12rPnfIjVcZThJWSbONjBlx+JhTzcXfo/sQXtGNbXiiu7K5ieLoyk3NXlfvv5EqrUppWSWfJo6cMFSjBK9OS4unP9yNCScknF3695HrRvd5Xv6LojJh8Y4pqWbegB0rd7Ge0oxb1j2X5afIszVtwqrlTqX6r6M2k9miW6tNnmWrE2gAC0rAAAAAAAAAAAAAAAAAAAAAAAAAPjZTbU2pJZU/NlVtsa1lk665TeET8ZtCFPV3fT79ChxmMlVzcrRWiRFVRKyk7zlnw/ueq2Ip07v5LNI8y3USs76PQrpjD6nunLstvsx+bKzG7QXuQTbfP7sx4utOpZqVo+GZIpLs3evV29Sj6lxFqwpxteDnJ687GelOnFXzS6aEPF7XpU72fa0v9ioxE51e05tR+Zz6HSy2jjJ1MoZrQi08Kqad32ueehVzxyheMG797IstpSd1Uv4oZ4OqLLStk+KyZ6xV2lZ/88SDQrKzXHe/h82eZ4nhg87sbhtJVTsRvx59GVqx3FlnlL1RArY1O7lLyNo3C3Xlip+1nFxw6f/sfRd3VnYQlOWInJOMFmRvX4fR/6Zy4WlKTtfmkrXXdqbQeKVKMYqMUlFKyS0SXI9nuVw2RUTx5y3SbAAJkQAAAAAAAAAAAAAAAAAAAAAeak0k29Fmeij2ztB5xjorp9ciq61VxyWV1ucsGPaO03LsxTty+7KunU4JZu9+Xf1MLbmkm3GS5J6nmvKNKD7Vm9XqzxZTlN5kenGCisIbQx8IvhuuKTs2voVUYyU085J6ZZJHijgVJufHxte7FZereRYLGwox4qqSl0TuvU437k0S3BWUptKOtrZmvbU2reTjFPh6owYzF1K8m6b7PXr4dD7hqd+zNZ9/M5nJ3aYI4On77fE9Vfl4mB1ak32Pd0b5a56k7+EhDWTz5fuQcfi2k401ZLVobiWDxiadCObea7yoxW1FnZd1yJi6c53bl2fQpsTXUNM2TUXIZSJv8c+SsYP8AEpXd5vyKiptC+TefcSMG7yi7XS5FvgJctEXYbhuTubXx9RTfZw0ZLjlfOWd3GK695+gMNh4U4RhCKjCKSSWiSOM7s068leMJUoLRqTivJE7b+9saEJRddzksrubcYPvXN9xfVqIw8qjyZbqZTeW+DqGM2rRpq8qit6lTU3jlJ3pxhw/zN8Xd2Vp8z8/47flKpFq9a3xyuuF2+CDWSv6lfDe+Um5VYS4r3U6bccurjezZbOWofSwVQhSu3k/SNPb9R/BB+qMq3hadpUfSV/lY55g9swaoribpzimqrau3bmloWr4+LJmZ32xeMl3g1v0N7w+2aUsr8L6Sy+ehPjJPNNNdxzKVaor9TLQxtSLurrLk7FkNbJf5IrlpF8rOkg0vZ+8E45yzvyb1NwoVlKKkndM11Xxs6M1tLr7MgALyoAAAAAAAAAAAAjbRxHBTlK9novE0ivObbUHmnZvq7Xf1Nh3uzjTg9G235L9zUMXVak1FWv2m720yPK1k8zwehpY4jkl1cM45zlfLMrcZTlOVuNKPfzJmJm3BcTv+pUU6MpScm/K+hh9TYiypYeNOLm3eyss8imq1JVJZq8dD7tzE8KjTjzJex8HfJ6LNt5WXNkG8smlhZPeB2dLiXDJqPTK3jmZq20aVuGK9rO+kGrK35qmi8FmaXvlvTFOVOnNxoRssr3qPm3nd87Lol56ZLfDFyThQSpJ5f5abm9fid7PwsbKtNOayUWXxi8ep1jG7XqU1xSoUqeV0pZtq/WWbX9pX1vxEjF246NtM219MjnmC3OxFbtValm8+1eTz6t8y5ofh3TXvVZN92X6FmymPDkcSvlztx9zY6v4lYduzVJ52z9q0+WTUbdTHLbWz6+bw+Fm3yU4x8PeV7lPP8O6LWU5LzItX8N/y1n5pMYo9G0S8O9ei/Ms8ZQ2VHN4Jp5ZRrZXfJ2eXiesNt7AYfOGBjGSWTdTj+qZSQ/D2stK69H9yVPcmTjZ1GnyyVr8u8S8N9zb/ADChb/r/ANRH3g39qVY2Urr8kbxivG2cvNlBgMPXxDlxSai9VbLVOyXLRHrDYCFCc44unKMrrgbUuF63s1ryNw2ZtWjFKKjBqOkoLW/VvNls3GqPkX3IVVu2Xnf2PGxt06drzp59+fyLDau71OUJcMU2loiwwm1oSWS/c9VNqU13Pv0MfiSbyz0FCKWEjTt2dnVpVJ0uPhoxTm4t8+TjfNO9r2OkbvY+NSioOpetTupJ24nZ5fKyNGxNSU8RTdBxd3nFXfFH4lZdUbngtjUKUlUcpuola0bRivF2vJ95OyWXlmSUdvReyUb580R1i6dtU2m9Lsg1ZSb1MXsbef66lRDJ7li+KTVueT/bkX+xdsOlUjFvsyaUl48zV4Sz0yRmrVnl1Oxk4vKOyipLDOupgibJm3QpN6uEX8kSz3IvKTPHaw8AAEjgAAAAAAAABQ715Rpyto2vC9vsaXtG/HG17vLPv+qOl47CqpCUHo/k+TNB2hhZJtOLU4Xt3ruPJ1tbU93uehpZpxx7EXE3VOV1Zr7FPgKlrtvPUn0MQ53hJ5/8yIdPY2JbdqLad9Wo36amE2LghcXHWbfux+Z53h2x7DDNp8Lq3XfwQVm14yaXk+hZ1t38Xw9mCu00+1HL5mp7/bq7QrTXssLOVOCjCNpQbcYR4U7cV1d8Uv7yyitSmlLg5ZZiLaOdYmtLEVm28m/RXN63d2SlFcKtlr9f/pUbL3Mx8XaWCqpPV8N/DQ3vZ2zq9OFpUascvyP7ZG3VWLiMejmjrWNz7ZnoJLLiv9yS5Lroa1WxUYzaU+1m2mrv55IwvbOdl8kjMkjY2zZ5V4295eTMkKit7xr8ce0s9DKscrJ3yO7Uc3MvVVv8RHqVerafj9yoW0Fa/Eu5ZGDEY7RJcSybtfTx0G05vJe2cDRxNLgm7PPhktYvrbmtLo5rUo1aE3TqRcZL0l3p80bxVxN9beKKzbtFVqajbtLOLfJ814FtVm3yy6K7K9z3x7/Ui7H2rnwtK/XqWqxS4oxu0m1dR1fh3miQlJP+ZfU6fuNhIuEq1en2o2UG9VJ6SSfkLqVF5RGF/lNq2XOhSpWpUbSlFcUpJKWffrfzPMtMrirV6Nv0uMrIolJMz8oxRpO/Tu+56u3k2vId9j5Om/Ahk6ebpc8z7hqbnOMEu02l6s8vuRt+5mxu17aa7o+PUsqrc5YRyc1GOWbfQp8MYxWiSXorHsA9tLHB5IAB0AAAAAAAAAA1veatRdk2+Nfleniy32xi/Z0pSWuifTvZoymk7yfE3nnp6Hma/UY/to36Kjd52S8DCN7wo3fVfrNlhTq1fyRy6ysvuyo/j5cmzx/EyPMU8G+UMl77aT+CC8Jt/oe4zf5F5TX62Ne9sz6q7Q8SX7/gg60bLD+lr+6P3MsILn9V9zV1iX1MixsupZGz3RVKv8TYq+z6NTKpTjJW0koP63NE3m3Coz4pYb/LqZ9i74J91vgfhl3F4sXN8zzPESXMm7OMpHIqUX2cUxleUXKFRSjKDs4vJprkzbdxt15YpKrWbjQd+FXtKpZ2y6R1V9X8yTvvsSliYOq6saVWEX2n7s1qlPmrdeV3qb3u7GMMPRjG1owjFW6KKS8SXixlFYNDmyZhtiYaEFCOHpKC5ezg0/G6u33ldtXcrDVU+CLpyta8Ha3hF9n5F9CZ7uS3GXLT4OQbU3FxVHOnL2yXL3Zf7W7PyfkaxjPbQl7N0Z+0fKUXGy55vKx+hnFPU+xUdOFW8DqfPJb48kj864Dc2pOUqlXxUINdrxlojoNPF06dOlTlG03BSlllFrJXenU6PW2fRn71KL5Xsk14SWa8jm++H4XTm3PCYuon/wCKtJuPhGos1zykn4osbc+GyhWL2MMsZGV7VPT9DJHGxy7XzWRzqpsfHUZunPjhJcpfVPRrvWRJpbMxkvjkRWm/Ek7jfnjYr4/3I72lC+bz7zXcLutip24py9TYdl7lTunK7feTWkI+OWex6HtKilN9n8q5+PcdHwGKySSy6GubI2A4WNqwuCUUbqqlBcGWye7smRdz6fEj6XlAAAAAAAAAAAABR74xvh3/AFL9TRac9L+B07HYWNWnKEtGvR8mczxOGlCUotWadmvA8X+o1tTUvc9XQTWxxM/GhCepFpMypmBcmuXBm9ofeMwHokkyttGZSPaqEdsXO8ogybTqox4yslFmCLZS7y7VUbU4vttXf8q+5bBOflRXJY5Od7/bVlXq+zi5ezhk7aSlz8baep1TcvbSrYWk75qKi0/zRyZpccBD8pO2Vi1h5W0g9e59TbbRipRj6EK55k8+p0+jXJUaqNbwWKUkmmTo12YUy5ouPa5HyFUrI1+8yKs+pLJHaWsahkk28+hTRxlnmZHjL5K/kTjP3ISiZcZh6dRLjhe17PmuufQk4bd6nZNJWeZG9rG2epe7KqXpx7rr00N2lfO1mW3hZRhpbIguSJVPBxXIkA3YM+WeYwS5HoA6cAAAAAAAAAAAAAAAPk9DVt4sGp9q3a6rn49TajFVoRlqii6nxFhltVmx5OSYrGQpu0+KPe02vVIjveHDX/14/wBzsdRxO79KesUVVfcbDy+Behg+Aa6N3xcX2aI9vYZa4mn5SMNXejCr/u3/AKVJ/RG7y/DzDfkQj+HmHXwI78EyPxMTQZb3UfhU5eEJfrYwS3nnLKnQn4uy/VnTae4tBfAiZR3Sox+FEloiL1MTl+HxONrZWUF3Zv10+Rb4DdW+bTbebbzbfezpFDYlKPwom08NFaI0V6ZRKZX5NCp7oq3ukPaG5t08jpyiuh8cF0LXUmiCuaON0tjYnDe52o/kl+j5Eqjt6McqsZU3/Msv9yyt42OpV8BCXIptobtQmnkjHZpPVGmGpT7Naw+MhNXjJNdU7kqMu8r8duVwvip8UJdYNr1tr5kaP8TSyqR9pHquzL00fyMkqZRL1NPouaktT7CnZKTla+iRV09r0X70+BrlPs/N5PyuSqO0qLX+rTeWqnH7kUmRkyVNvW7ayz7uZs+wKqako6ZNd11mvkagsdT0VSLfRNP6G3bu04xp5avNmzSp78ma7G3BbgA9MyAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHxxT5EergKctYkkHHFPs6m0UuK3Yw89YFbPcHCvkbYCt0wfoS8SXua5g9z8PT0L3D4aMFZGYEo1xj0jjk32AATIgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH/2Q=='),
+            new products('Susu',10000,'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Milk_glass.jpg/200px-Milk_glass.jpg'),
+            new products('Roti',5000,'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Roti-obaid.jpg/220px-Roti-obaid.jpg')
+        ]
+
+        showdata=(arr)=>{
+            var hasil=''
+            arr.map((val,idx)=>{
+                hasil+=`<tr>
+                            <td>${val.nama}</td>
+                            <td>${val.harga}</td>
+                            <td><img src="${val.gambar}"></td>
+                            <td><input type="button" value="ADD TO CART"></td>
+                        </tr>`
+            })
+            document.getElementById('pokemon').innerHTML=hasil
+        }
+
+        showdata(list)
+    </script>
+</body>
+</html>
