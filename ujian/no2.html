@@ -104,6 +104,12 @@
 
         addtocart = (idx) => {
 
+            var concart = confirm(`apakah anda ingin menambahkan ${data[idx].nama} ke dalam keranjang anda ?`)
+            if (concart==false){
+                return
+            }
+            
+            
             do {
                 var qty = prompt('Berapa banyak ? (input jumlah dalam angka 1,2,3,...)')
                 if (qty == null) {
@@ -132,7 +138,8 @@
             if (arr.length == 0) {
                 hasil = `<h3>Cart is empty !</h3>`
             } else {
-                var totaljumbar = 0
+                total=0
+                totaljumbar = 0
                 for (t = 0; t < cartProduct.length; t++) {
                     total += cartProduct[t].harga * cartQty[t]
                     totaljumbar += cartQty[t]
@@ -169,6 +176,11 @@
         }
 
         function del(idx) {
+            var condel = confirm(`apakah anda ingin menghapus ${cartProduct[idx].nama} dari keranjang anda ?`)
+            if (condel==false){
+                return
+            }
+            
             do {
                 var ndel = prompt('berapa yg ingin dihapus dari cart ? ')
                 if (ndel == null) {
@@ -188,6 +200,12 @@
                     cartQty[idx] = cartQty[idx] - ndel
                     showCart(cartProduct)
                 }
+                
+                if(cartQty.length==0 || cartProduct.length==0){
+                document.getElementById('checkout').innerHTML = ``
+                document.getElementById('pay').innerHTML = ``
+                showCart(cartProduct)
+                }
             }
         }
 
@@ -203,7 +221,12 @@
             function countdown() {
                 if (timeLeft == -1) {
                     alert('waktu pembayaran telah habis ! ')
+                    cartProduct=[]
+                    cartQty=[]
+                    document.getElementById('checkout').innerHTML = ``
+                    document.getElementById('pay').innerHTML = ``
                     clearInterval(timerId)
+                    return showCart(cartProduct)
                 } else {
                     document.getElementById('checkout').innerHTML = timeLeft + ' detik tersisa'
                     timeLeft--
@@ -223,21 +246,21 @@
         function bayar() {
             var bayaran = document.getElementById('bayaran').value
             if (total < bayaran) {
-                alert(`kembalian anda ${bayaran-total}`)
+                alert(`kembalian anda ${bayaran-total} , terimakasih sudah berbelanja !`)
                 cartProduct = []
                 cartQty = []
                 document.getElementById('checkout').innerHTML = ``
                 document.getElementById('pay').innerHTML = ``
                 return showCart(cartProduct)
             } else if (total == bayaran) {
-                alert(`terimaksi uang anda pas`)
+                alert(`terimaksih uang anda pas`)
                 cartProduct = []
                 cartQty = []
                 document.getElementById('checkout').innerHTML = ``
                 document.getElementById('pay').innerHTML = ``
                 return showCart(cartProduct)
             } else if (total > bayaran) {
-                alert(`uang anda kurang`)
+                alert(`uang anda kurang ${total-bayaran}`)
             } else {
                 alert('input hanya angka ')
             }
